@@ -27,4 +27,12 @@ public class InMemoryProductRepository implements ProductRepository{
           this.productList.add(product);
           return product;
      }
+
+     @Override
+     public Product findById(int productId) {
+          return productList.stream()
+                  .filter(product -> product.getId() == productId)
+                  .findFirst()
+                  .orElse(null);
+     }
 }

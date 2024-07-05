@@ -6,9 +6,12 @@ import com.manager.managerApp.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.NoSuchElementException;
 
 @Controller
 @RequiredArgsConstructor
@@ -31,5 +34,11 @@ public class ProductsController  {
     public String createProduct(NewProductPayload payload){
         Product newProduct = this.productService.createProduct(payload.title(), payload.details());
         return "redirect:/catalogue/products/list";
+    }
+
+    @GetMapping("{productId:\\d+}")
+    public String getProduct(@PathVariable("productId") int productId, Model model){
+        model.addAttribute("product", this.productService.findProductById(productId).orElseThrow(() -> new NoSuchElementException("product not found")));
+        return "catalogue/products/product".formatted(productId);
     }
 }

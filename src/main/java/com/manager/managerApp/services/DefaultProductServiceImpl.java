@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,5 +23,11 @@ public class DefaultProductServiceImpl implements ProductService{
     @Override
     public Product createProduct(String title, String details) {
         return productRepository.save(new Product(null, title, details));
+    }
+
+    @Override
+    public Optional<Product> findProductById(int productId) {
+        Product product = productRepository.findById(productId);
+        return Optional.ofNullable(product);
     }
 }
