@@ -9,5 +9,5 @@ public interface ProductService {
     List<Product> findAllProducts();
     Product createProduct(String title, String details);
 
-    Optional<Product> findProductById(int productId);
+    Optional<Product> findProductById(Integer productId);
 }

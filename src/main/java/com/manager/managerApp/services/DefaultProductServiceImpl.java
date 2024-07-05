@@ -26,7 +26,7 @@ public class DefaultProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Optional<Product> findProductById(int productId) {
+    public Optional<Product> findProductById(Integer productId) {
         Product product = productRepository.findById(productId);
         return Optional.ofNullable(product);
     }

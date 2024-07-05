@@ -33,12 +33,12 @@ public class ProductsController  {
     @PostMapping("create")
     public String createProduct(NewProductPayload payload){
         Product newProduct = this.productService.createProduct(payload.title(), payload.details());
-        return "redirect:/catalogue/products/list";
+        return "redirect:/catalogue/products/%d".formatted(newProduct.getId());
     }
 
     @GetMapping("{productId:\\d+}")
-    public String getProduct(@PathVariable("productId") int productId, Model model){
+    public String getProduct(@PathVariable("productId") Integer productId, Model model){
         model.addAttribute("product", this.productService.findProductById(productId).orElseThrow(() -> new NoSuchElementException("product not found")));
-        return "catalogue/products/product".formatted(productId);
+        return "catalogue/products/product";
     }
 }
