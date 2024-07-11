@@ -35,4 +35,9 @@ public class InMemoryProductRepository implements ProductRepository{
                   .findFirst()
                   .orElse(null);
      }
+
+     @Override
+     public void deleteById(Integer id) {
+          productList.remove(id-1);
+     }
 }

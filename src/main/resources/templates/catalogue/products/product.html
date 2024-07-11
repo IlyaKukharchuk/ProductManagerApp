@@ -12,6 +12,12 @@
     <div th:if="${product != null}">
         <p><strong>Title:</strong> <span th:text="${product.title}"></span></p>
         <p><strong>Details:</strong> <span th:text="${product.details}"></span></p>
+        <button>
+            <a data-th-href="@{/catalogue/products/{productId}/edit_product(productId=${product.id})}">Edit product</a>
+        </button>
+        <form method="post" data-th-action="@{/catalogue/products/{productId}/delete(productId=${product.id})}">
+            <button type="submit">Delete product</button>
+        </form>
     </div>
 
     <div th:unless="${product != null}">

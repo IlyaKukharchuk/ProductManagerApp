@@ -10,4 +10,8 @@ public interface ProductService {
     Product createProduct(String title, String details);
 
     Optional<Product> findProductById(Integer productId);
+
+    void updateProduct(Integer id, String title, String details);
+
+    void deleteProduct(Integer id);
 }

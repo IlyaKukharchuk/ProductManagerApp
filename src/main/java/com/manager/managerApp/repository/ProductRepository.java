@@ -11,4 +11,6 @@ public interface ProductRepository {
     Product save(Product product);
 
     Product findById(int productId);
+
+    void deleteById(Integer id);
 }
