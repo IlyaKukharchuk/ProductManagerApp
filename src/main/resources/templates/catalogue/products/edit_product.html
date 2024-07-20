@@ -7,16 +7,22 @@
 <body>
   <a data-th-href="@{/catalogue/products/{productId}(productId=${product.id})}">&larr; Back to [[${product.title}]] product page</a>
   <h1>Edit &ndash; [[${product.title}]] product</h1>
+  <div style="color:red;" data-th-if="${errors}">
+      <h2>Mistakes were made</h2>
+      <ul>
+          <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
+      </ul>
+  </div>
   <form method="post" data-th-action="@{/catalogue/products/{productId}/edit_product(productId=${product.id})}">
       <label>
           Title
           <br>
-          <input type="text" name="title" data-th-value="${product.title}">
+          <input type="text" name="title" data-th-value="${payload != null ? payload.title : product.title}">
       </label><br>
       <label>
           Description
           <br>
-          <textarea name="details" data-th-text="${product.details}"></textarea>
+          <textarea name="details" data-th-text="${payload != null ? payload.details : product.details}"></textarea>
       </label><br>
       <button type="submit">Update product</button>
   </form>

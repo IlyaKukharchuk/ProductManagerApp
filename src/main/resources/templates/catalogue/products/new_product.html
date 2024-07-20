@@ -7,7 +7,7 @@
 <body>
     <a data-th-href="@{/catalogue/products/list}">&larr; Back to list of products</a>
     <h1>Add new product</h1>
-    <div data-th-if="${errors}">
+    <div style="color:red;" data-th-if="${errors}">
         <h2>Mistakes were made</h2>
         <ul>
             <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
