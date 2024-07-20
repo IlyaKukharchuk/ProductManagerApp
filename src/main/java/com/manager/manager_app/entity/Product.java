@@ -1,4 +1,4 @@
-package com.manager.managerApp.entity;
+package com.manager.manager_app.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

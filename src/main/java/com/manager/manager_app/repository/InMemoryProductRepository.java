@@ -1,13 +1,12 @@
-package com.manager.managerApp.repository;
+package com.manager.manager_app.repository;
 
-import com.manager.managerApp.entity.Product;
+import com.manager.manager_app.entity.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository{

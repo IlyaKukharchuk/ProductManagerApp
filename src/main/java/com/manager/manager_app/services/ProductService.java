@@ -1,6 +1,6 @@
-package com.manager.managerApp.services;
+package com.manager.manager_app.services;
 
-import com.manager.managerApp.entity.Product;
+import com.manager.manager_app.entity.Product;
 
 import java.util.List;
 import java.util.Optional;

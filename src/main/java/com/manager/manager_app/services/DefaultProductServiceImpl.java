@@ -1,7 +1,7 @@
-package com.manager.managerApp.services;
+package com.manager.manager_app.services;
 
-import com.manager.managerApp.entity.Product;
-import com.manager.managerApp.repository.ProductRepository;
+import com.manager.manager_app.entity.Product;
+import com.manager.manager_app.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

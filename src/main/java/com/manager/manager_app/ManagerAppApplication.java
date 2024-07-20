@@ -1,4 +1,4 @@
-package com.manager.managerApp;
+package com.manager.manager_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

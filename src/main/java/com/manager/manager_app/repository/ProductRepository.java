@@ -1,6 +1,6 @@
-package com.manager.managerApp.repository;
+package com.manager.manager_app.repository;
 
-import com.manager.managerApp.entity.Product;
+import com.manager.manager_app.entity.Product;
 
 import java.util.List;
 
